@@ -1,0 +1,22 @@
+# Ignorar as matrizes
+*.bin
+
+# Ignorar binários do C
+ThreadsC/multiplicador
+ThreadsC/multiplicador_aut
+
+# Ignorar classes compiladas do Java
+*.class
+java/*.class
+
+#ignorar arquivos de métricas
+*.csv
+
+# Ignorar imagens
+*.png
+
+#ignorar configs do vscode
+.vscode/
+
+#Ignorar arqivos apple
+.DS_Store
