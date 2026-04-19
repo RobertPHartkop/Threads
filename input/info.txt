@@ -1,0 +1,14 @@
+Colocar aqui os binarios das matrizes nomeados da seguinte forma: Matriz(d)1.bin onde d = dimensão da matriz quadrada (1000, 5000, 10000, etc.).
+
+Sempre criar matrizes em par. Ex: Matriz(5000)1.bin e Matriz(5000)2.bin 
+
+Exemplo da estrutura da pasta:
+
+input/
+├── info.txt
+├── Matriz(1000)1.bin
+├── Matriz(1000)2.bin
+├── Matriz(5000)1.bin
+├── Matriz(5000)2.bin
+├── Matriz(10000)1.bin
+└── Matriz(10000)2.bin
