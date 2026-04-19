@@ -19,9 +19,8 @@ public class MultiplicacaoParalela {
     public void executar() throws Exception {
         C = new long[n * n];
 
-        CyclicBarrier barrier = new CyclicBarrier(numThreads, () ->
-                System.out.println("Todas as threads concluíram suas fatias.")
-        );
+        // Removida a mensagem do CyclicBarrier para manter o console limpo como no OpenMP
+        CyclicBarrier barrier = new CyclicBarrier(numThreads);
 
         Thread[] threads = new Thread[numThreads];
         int linhasPorThread = n / numThreads;
