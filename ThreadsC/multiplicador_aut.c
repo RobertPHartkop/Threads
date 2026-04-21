@@ -43,7 +43,6 @@ void salvar_matriz_binario(const char *caminho, int n, long long *dados)
 
 void salvar_metricas(int tamanho, int threads, double tempo)
 {
-    // Sobe um nível (../) e entra na pasta output
     FILE *f = fopen("../output/c/resultados.csv", "a");
     if (!f)
     {
@@ -81,7 +80,6 @@ void executar_sequencial(Matriz A, Matriz B)
     salvar_metricas(n, 1, tempo);
 
     char nome_arquivo[256];
-    // Sobe um nível (../) e salva na pasta output
     sprintf(nome_arquivo, "../output/c/resultado_%d.bin", n);
     salvar_matriz_binario(nome_arquivo, n, C);
     free(C);
@@ -113,7 +111,6 @@ void executar_paralela(Matriz A, Matriz B, int num_threads)
     salvar_metricas(n, num_threads, tempo);
 
     char nome_arquivo[256];
-    // Sobe um nível (../) e salva na pasta output
     sprintf(nome_arquivo, "../output/c/resultado_%d.bin", n);
     salvar_matriz_binario(nome_arquivo, n, C);
     free(C);

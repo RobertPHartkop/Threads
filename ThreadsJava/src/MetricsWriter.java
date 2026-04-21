@@ -11,7 +11,6 @@ public class MetricsWriter {
     public void salvar(int tamanho, int threads, double tempoSegundos) throws Exception {
         File arquivo = new File(caminho);
 
-        // GARANTIA: Cria as pastas pai se não existirem
         File pasta = arquivo.getParentFile();
         if (pasta != null && !pasta.exists()) {
             pasta.mkdirs();
@@ -27,7 +26,6 @@ public class MetricsWriter {
                 bw.newLine();
             }
 
-            // Usando Locale.US para forçar o ponto no lugar da vírgula decimal
             bw.write(tamanho + "," + threads + "," + String.format(Locale.US, "%.6f", tempoSegundos));
             bw.newLine();
         }

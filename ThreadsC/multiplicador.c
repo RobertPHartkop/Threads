@@ -36,7 +36,6 @@ void salvar_matriz_binario(const char *caminho, int n, long long *dados)
         return;
     }
 
-    // Escreve cabeçalho: n (linhas) e n (colunas) - 4 bytes cada
     int header[2] = {n, n};
     fwrite(header, sizeof(int), 2, f);
 
@@ -88,7 +87,6 @@ void executar_sequencial(Matriz A, Matriz B)
 
     salvar_metricas(n, 1, tempo);
 
-    // Gera o nome do arquivo dinamicamente apontando para output com sufixo _manual
     char nome_arquivo[256];
     sprintf(nome_arquivo, "../output/c/resultado_%d_manual.bin", n);
     salvar_matriz_binario(nome_arquivo, n, C);
@@ -126,7 +124,6 @@ void executar_paralela(Matriz A, Matriz B, int num_threads)
 
     salvar_metricas(n, num_threads, tempo);
 
-    // Gera o nome do arquivo dinamicamente apontando para output com sufixo _manual
     char nome_arquivo[256];
     sprintf(nome_arquivo, "../output/c/resultado_%d_manual.bin", n);
     salvar_matriz_binario(nome_arquivo, n, C);
@@ -160,7 +157,6 @@ int main()
 
         if (opcao == 1 || opcao == 2)
         {
-            // Pede apenas a dimensão, facilitando a vida do usuário
             printf("Digite a dimensao da matriz (ex: 1000, 5000, 10000): ");
             if (scanf("%d", &dimensao) != 1)
             {
@@ -170,7 +166,6 @@ int main()
                 continue;
             }
 
-            // Monta automaticamente os caminhos apontando para a pasta input
             sprintf(caminhoA, "../input/Matriz(%d)1.bin", dimensao);
             sprintf(caminhoB, "../input/Matriz(%d)2.bin", dimensao);
 

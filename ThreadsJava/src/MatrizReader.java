@@ -16,7 +16,7 @@ public class MatrizReader {
                 .order(ByteOrder.LITTLE_ENDIAN);
 
         n = headerBuffer.getInt();
-        headerBuffer.getInt(); // colunas (ignorado, sempre quadrada)
+        headerBuffer.getInt();
 
         byte[] dataBytes = fis.readAllBytes();
         fis.close();
